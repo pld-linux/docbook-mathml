@@ -9,8 +9,8 @@ Group:		Applications/Publishing/XML
 URL:		http://www.oasis-open.org/docbook/
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	401aae1f74a43644d37479f4453be247
-BuildRequires:	rpm-build >= 4.0.2-94
 BuildRequires:	libxml2-progs
+BuildRequires:	rpm-build >= 4.0.2-94
 PreReq:		libxml2
 Requires(post,preun):	/usr/bin/xmlcatalog
 Requires:	libxml2-progs >= 2.4.17-6
@@ -18,8 +18,8 @@ Requires:	w3-dtd-mathml
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define dtd_path	%{_datadir}/xml/docbook-mathml-dtd-%{version}
-%define	xmlcat_file	%{dtd_path}/catalog.xml
+%define		dtd_path	%{_datadir}/xml/docbook-mathml-dtd-%{version}
+%define		xmlcat_file	%{dtd_path}/catalog.xml
 
 %description
 DocBook MathML Module 1.0.
@@ -49,14 +49,12 @@ rm -rf $RPM_BUILD_ROOT
 # NOTE: empty lines after %%xmlcat_* are needed by rpm macro with parameters
 %post
 if ! grep -q %{xmlcat_file} /etc/xml/catalog ; then
-    %xmlcat_add %{xmlcat_file}
-
+	%xmlcat_add %{xmlcat_file}
 fi
 
 %preun
 if [ "$1" = "0" ] ; then
-    %xmlcat_del %{xmlcat_file}
-
+	%xmlcat_del %{xmlcat_file}
 fi
 
 %files
