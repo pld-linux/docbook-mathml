@@ -10,7 +10,7 @@ URL:		http://www.oasis-open.org/docbook/
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	401aae1f74a43644d37479f4453be247
 BuildRequires:	rpm-build >= 4.0.2-94
-BuildRequires:	/usr/bin/xmlcatalog
+BuildRequires:	libxml2-progs
 PreReq:		libxml2
 Requires(post,preun):	/usr/bin/xmlcatalog
 Requires:	libxml2-progs >= 2.4.17-6
