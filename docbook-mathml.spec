@@ -45,14 +45,17 @@ install dbmathml.dtd $RPM_BUILD_ROOT%{dtd_path}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+# NOTE: empty lines after %%xmlcat_* are needed by rpm macro with parameters
 %post
 if ! grep -q %{xmlcat_file} /etc/xml/catalog ; then
     %xmlcat_add %{xmlcat_file}
+
 fi
 
 %preun
 if [ "$1" = "0" ] ; then
     %xmlcat_del %{xmlcat_file}
+
 fi
 
 %files
