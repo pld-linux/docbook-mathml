@@ -2,7 +2,7 @@ Summary:	DocBook MathML Module 1.0
 Summary(pl):	Specyfikacja DocBook MathML Module 1.0
 Name:		docbook-mathml
 Version:	1.0
-Release:	1
+Release:	2
 Vendor:		OASIS
 License:	Free
 Group:		Applications/Publishing/XML
