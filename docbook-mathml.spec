@@ -1,5 +1,5 @@
 Summary:	DocBook MathML Module 1.0
-Summary(pl):	DocBook MathML Module 1.0
+Summary(pl):	Specyfikacja DocBook MathML Module 1.0
 Name:		docbook-mathml
 Version:	1.0
 Release:	1
@@ -21,7 +21,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define	xmlcat_file	%{dtd_path}/catalog.xml
 
 %description
-DocBook MathML Module 1.0
+DocBook MathML Module 1.0.
+
+%description -l pl
+Specyfikacja DocBook MathML Module 1.0.
 
 %prep
 %setup -q
@@ -45,13 +48,11 @@ rm -rf $RPM_BUILD_ROOT
 %post
 if ! grep -q %{xmlcat_file} /etc/xml/catalog ; then
     %xmlcat_add %{xmlcat_file}
-
 fi
 
 %preun
 if [ "$1" = "0" ] ; then
     %xmlcat_del %{xmlcat_file}
-
 fi
 
 %files
