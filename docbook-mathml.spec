@@ -1,5 +1,5 @@
 Summary:	DocBook MathML Module 1.0
-Summary(pl.UTF-8):   Specyfikacja DocBook MathML Module 1.0
+Summary(pl.UTF-8):	Specyfikacja DocBook MathML Module 1.0
 Name:		docbook-mathml
 Version:	1.0
 Release:	2
